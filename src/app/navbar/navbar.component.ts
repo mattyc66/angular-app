@@ -4,13 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-navbar',
   standalone: true,
   imports: [],
-  template: `
-  <div class="navbar is-dark"> 
-    <div class="navbar-logo">
-      <img src="" alt="logo">
-    </div>
-  </div>
-  `,
+  templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {

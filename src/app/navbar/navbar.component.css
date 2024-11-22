@@ -1,0 +1,11 @@
+.navbar-item img {
+    max-height: 50px; 
+  }
+  
+  .navbar-item {
+    padding: 10px 20px; 
+  }
+  
+  .navbar {
+    padding: 10px; 
+  }

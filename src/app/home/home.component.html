@@ -1,8 +1,8 @@
-<section class="hero is-success is-halfheight">
+<section class="hero is-success is-fullheight">
     <div class="hero-body ">
       <div class="container">
-        <p class="title">Matthew Coppard</p>
-        <p class="subtitle">
+        <p class="title has-text-white">Matthew Coppard</p>
+        <p class="subtitle has-text-white">
             Computer scientist with a strong foundation in programming, web development, 
             and cybersecurity. I thrive on building seamless digital experiences, designing 
             secure solutions, and crafting scalable, high-performance web applications. Based in the UK
@@ -14,32 +14,47 @@
 
 <section class="section" id="showcase">
 <div class="container" id="work">
-    <h2 class="h2">previous work</h2>
+    <h2 class="title is-underlined">previous work</h2>
     <div role="list" class="work-list">
         <div role="listitem" class="work-item">
-            <a href="" class="card"> 
+            <a href="../waqqly/waqqly.component.html" class="card"> 
             <div class="inner-card">
-                <img src="" alt="waq" class="image">
+                <img src="assets/waqqly_transparent1.png" alt="waq" class="image" style="width:400px;height:300px;">
+            </div>
+            <div class="lower-card">
                 <h3 class="h3">Waqqly</h3>
-                <p class="paragraph">insert waqqly here</p>
+                <p class="paragraph">
+                    Modern web application built with react integrated with a cloud 
+                    based database and utilising microservices.
+                </p>
             </div>
             </a>   
         </div>
         <div role="listitem" class="work-item">
             <a href="" class="card"> 
                 <div class="inner-card">
-                    <img src="" alt="track" class="image">
-                    <h3 class="h3">Tracker</h3>
-                    <p class="paragraph">insert Tracker here</p>
+                    <img src="assets/node-mcu-esp32-programming-600nw-2165875645.png" alt="track" class="image" style="width:400px;height:300px;">
                 </div>
-                </a>   
+                <div class="lower-card">
+                    <h3 class="h3">Tracker</h3>
+                    <p class="paragraph">
+                        A GPS tracker built with an ESP32 module and GPS sensor, 
+                        transmitting real-time GPS coordinates for remote monitoring and tracking.
+                    </p>
+                </div>
+            </a>   
         </div>
         <div role="listitem" class="work-item">
             <a href="" class="card"> 
                 <div class="inner-card">
-                    <img src="" alt="jav" class="image">
+                    <img src="assets/Java-Logo-700x394.png" alt="jav" class="image" style="width:400px;height:300px;">
+                </div>
+                <div class="lower-card">
                     <h3 class="h3">Java</h3>
-                    <p class="paragraph">insert java here</p>
+                    <p class="paragraph">
+                        A Java library application for managing books and movies, featuring 
+                        an integrated SQL database for seamless data handling.
+                    </p>
                 </div>
                 </a>   
         </div>
@@ -49,7 +64,53 @@
 
 <section class="section">
     <div class="container">
-        <p>BIO</p>
+        <div class="columns is-vcentered">
+            <!--left column-->
+            <div class="column is-one-third">
+                <img src="assets/qQidlw.jpg" alt="bio image" class="image bio">
+            </div>
+            <!--right column-->
+            <div class="column is-half">
+                <p class="title">Who is Matthew</p>
+                <p>
+                    Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+                    Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
+                    ut fermentum massa justo sit amet risus. Donec sed odio dui.
+                    Nullam quis risus eget urna mollis ornare vel eu leo.
+                    Cum sociis natoque penatibus et magnis dis parturient montes,
+                    nascetur ridiculus mus. Nullam id dolor id
+                    nibh ultricies vehicula ut id elit.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <!--insert contact form here-->
+        <p class="title">Get in Touch</p>
+        <form>
+            <!--name-->
+            <div>
+                <label class="label">Name</label>
+                <input type="text" name="name" class="input">
+            </div>
+            <!--email-->
+            <div>
+                <label class="label">Email</label>
+                <input type="email" name="email" class="input">
+            </div>
+            <!--message-->
+            <div>
+                <label class="label">Your Message</label>
+                <textarea name="message" class="textarea"></textarea>
+            </div>
+            <!--button-->
+            <button type="submit" class="button is-large is-warning">
+                Send
+            </button>
+        </form>
     </div>
 </section>
 

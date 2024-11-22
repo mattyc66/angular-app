@@ -1,0 +1,19 @@
+.footer {
+    padding: 20px 0; 
+  }
+  
+  .socials {
+    margin-top: 10px; 
+    margin-bottom: 15px;
+  }
+  
+  .socials a {
+    margin: 0 10px; 
+    color: #fff; 
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .socials a:hover {
+    transform: scale(1.1); 
+    color: #ffdd57; 
+  }
