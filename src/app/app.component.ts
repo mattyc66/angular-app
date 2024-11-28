@@ -3,16 +3,15 @@ import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from "./navbar/navbar.component";
 import { FooterComponent } from "./footer/footer.component";
 import { HomeComponent } from "./home/home.component";
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, FooterComponent, HomeComponent],
+  imports: [FormsModule ,RouterOutlet, NavbarComponent, FooterComponent],
   template: `
   
   <app-navbar></app-navbar>
-
-  <app-home></app-home>
 
   <router-outlet></router-outlet> 
 
