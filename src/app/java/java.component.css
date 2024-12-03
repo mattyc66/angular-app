@@ -1,8 +1,25 @@
 .image {
-    max-width: 300px;
-    max-height: 400px;
-    display: block;   
-    margin: 0 auto;
+    max-width: 100%;     
+    max-height: 400px;   
+    display: block;       
+    margin: 0 auto;       
+}
+
+.columns.is-vcentered {
+    display: flex;
+    align-items: center;  
+}
+
+
+.column {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.column.is-one-third {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
 }
 
 
