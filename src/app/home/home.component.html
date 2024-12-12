@@ -90,7 +90,7 @@
     <div class="container">
         <!--insert contact form here-->
         <p class="title">Get in Touch</p>
-        <form>
+        <form (submit)="sendMessage($event)">
             <!--name-->
             <div>
                 <label class="label">Name</label>
