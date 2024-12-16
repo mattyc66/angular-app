@@ -10,12 +10,13 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [FormsModule ,RouterOutlet, NavbarComponent, FooterComponent],
   template: `
-  
+
   <app-navbar></app-navbar>
 
   <router-outlet></router-outlet> 
 
   <app-footer></app-footer>
+
 `,
   styleUrl: './app.component.css'
 })
