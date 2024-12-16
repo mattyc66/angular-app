@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, AfterViewInit } from '@angular/core';
+import { RouterModule, ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 import { getDatabase, ref, set } from 'firebase/database';
 
 @Component({
@@ -9,7 +9,25 @@ import { getDatabase, ref, set } from 'firebase/database';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent {
+export class HomeComponent implements AfterViewInit {
+  constructor(private router: Router, private route: ActivatedRoute) { }
+
+  ngAfterViewInit(): void {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        const fragment = this.route.snapshot.fragment;
+        if (fragment) {
+          const element = document.getElementById(fragment);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      }
+    });
+  }
+
+  
+  
   sendMessage(event: Event): void {
     event.preventDefault();
 

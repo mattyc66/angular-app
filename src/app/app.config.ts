@@ -18,5 +18,7 @@ export const appConfig = {
       { path: 'waqqly', component: WaqqlyComponent},
       { path: 'track', component: TrackComponent},
       { path: 'java', component: JavaComponent}
-    ]), provideFirebaseApp(() => initializeApp({"projectId":"angular-stuff-a75c9","appId":"1:279219199775:web:5973c3094bbcaaad621a2a","databaseURL":"https://angular-stuff-a75c9-default-rtdb.europe-west1.firebasedatabase.app","storageBucket":"angular-stuff-a75c9.firebasestorage.app","apiKey":"AIzaSyASiS8VkVUOgSQsd1edqUgcbhV_ijYUkWY","authDomain":"angular-stuff-a75c9.firebaseapp.com","messagingSenderId":"279219199775","measurementId":"G-L181K5CRZ2"})), provideAuth(() => getAuth()), provideFirestore(() => getFirestore()), provideDatabase(() => getDatabase())]
+
+    ]
+  ), provideFirebaseApp(() => initializeApp({"projectId":"angular-stuff-a75c9","appId":"1:279219199775:web:5973c3094bbcaaad621a2a","databaseURL":"https://angular-stuff-a75c9-default-rtdb.europe-west1.firebasedatabase.app","storageBucket":"angular-stuff-a75c9.firebasestorage.app","apiKey":"AIzaSyASiS8VkVUOgSQsd1edqUgcbhV_ijYUkWY","authDomain":"angular-stuff-a75c9.firebaseapp.com","messagingSenderId":"279219199775","measurementId":"G-L181K5CRZ2"})), provideAuth(() => getAuth()), provideFirestore(() => getFirestore()), provideDatabase(() => getDatabase())]
 };
