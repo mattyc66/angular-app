@@ -9,24 +9,109 @@
 <section class="section">
     <div class="container">
       <h2 class="title">The Idea</h2>
-      <p>INSERT TEXT HERE</p>
+      <p>
+        The project focusesd on addressing the challenges in animal safety and monitoring by leveraging advancements in GPS technology. 
+        The project highlights the development of a robust animal tracking system designed to improve safety, efficiency, and innovation across various use cases,
+        including wildlife conservation, livestock management, and pet care.
+        Key motivations for this project include preventing animals from straying into dangerous areas, ensuring real-time updates on their movements, and 
+        responding swiftly to emergencies. By integrating GPS and RFID technology, the proposed system aims to deliver cost-effective and precise solutions 
+        tailored to different environments.
+        With GPS enabling wide-area location tracking and RFID offering affordable solutions for confined spaces, this system is envisioned as a 
+        multi-purpose tool for users who prioritize animal safety and health. It stands to transform how we monitor, protect, and care for animals in 
+        diverse scenarios.
+      </p>
 
     </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <h2 class="title">What Was Done</h2>
+    <h2 class="title">Proposed Solution</h2>
     <p>
-      TALK ABOUT THE DEVELOPMENT
+      The project aims to develop a GPS-based animal tracking system equipped with advanced features to ensure real-time monitoring and timely alerts. 
+      The system is designed with the following capabilities:
+    </p>
+    <br>
+    <p>
+      <strong>GPS Boundaries and Real-Time Tracking</strong> <br>
+      Users can set safe GPS boundaries, ensuring animals remain within secure areas. Real-time location updates provide crucial insights, particularly 
+      during emergencies.
+    </p>
+    <br>
+    <p>
+      <strong>Boundary Breach and Inactivity Alerts</strong> <br>
+      The system detects boundary breaches and monitors animal inactivity, enabling users to respond promptly to potential dangers or health concerns.
+    </p>
+    <br>
+    <p>
+      <strong>Offline Functionality</strong> <br>
+      A mechanism to track animals when the system is offline by displaying the last known location ensures continuous safety monitoring, even in areas with 
+      limited connectivity.
+    </p>
+    <br>
+    <p>
+      <strong>Customizable Applications</strong> <br>
+      Designed to cater to various scenarios, the system can be adapted for wildlife, livestock, or domestic pets, allowing users to customize settings 
+      based on their specific needs.
+    </p>
+    <br>
+    <p>
+      <Strong>Lightweight and Durable Design</Strong> <br>
+      The proposed tracker combines durability with a user-friendly interface, ensuring it is practical for extended use across different environments.
+    </p>
+    <br>
+    <p>
+      By achieving these objectives, the project seeks to address gaps in current animal tracking technologies and provide a comprehensive solution for 
+      safeguarding animals across diverse contexts.
     </p>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-      <h2 class="title">Section</h2>
-      <p>SUMMARY OR SOMETHING</p>
+    <h2 class="title">Final System Development and Functionality</h2>
+    <br>
+    <h2 class="subtitle">Hardware used</h2>
+    <p>
+      The system’s hardware included an ESP32 board, a NEO-6M GPS module, a power bank, and an optional OLED display for testing purposes. 
+      The ESP32 was chosen over an Arduino for its built-in Wi-Fi and Bluetooth capabilities, eliminating the need for additional modules. 
+      The NEO-6M GPS module provided reliable location data with an accuracy of around 2.5 meters. The power bank supplied portable power, 
+      while the OLED display showed real-time GPS coordinates and satellite data during development, though it wasn’t essential for the final product
+    </p>
+    <br>
+    <h2 class="subtitle">Software</h2>
+    <p>
+      Development was carried out in Visual Studio Code with the PlatformIO extension. This combination offered advanced features like autocompletion, 
+      debugging tools, and GitHub integration, streamlining the coding process. The system was programmed in C++ and used the MQTT protocol for data 
+      communication. It connected to the HiveMQ public MQTT broker via Wi-Fi, transmitting live GPS data, including latitude, longitude, and satellite 
+      count, to specific topics accessible to users.
+    </p>
+    <br>
+    <h2>Hardware and Software Intergration</h2>
+    <p>
+      The ESP32 board acted as the core component, managing both the GPS module and the Wi-Fi connection. It continuously collected GPS data and transmitted 
+      it to the MQTT broker, ensuring real-time updates. The OLED display, used during testing, provided a quick way to verify that the GPS module was 
+      functioning without relying on external software. The seamless integration between hardware and software allowed for a reliable, efficient system 
+      capable of real-time communication.
+    </p>
+    <br>
+    <h2 class="subtitle">Features</h2>
+    <p>The system offered several key features to ensure usability and adaptability</p>
+    <ul>
+      <li><strong>Boundary System: </strong>Users could draw custom boundaries directly on a map instead of inputting GPS coordinates manually. If the tracker moved outside the set boundaries, an alert was triggered.</li>
+      <li><strong>User Interface: </strong>A web application built with React and hosted on AWS Amplify provided real-time GPS data and a live map showing the tracker’s location. The app was designed to be fully responsive, allowing access on both desktop and mobile devices.</li>
+      <li><strong>Live Tracking: </strong>The app displayed the tracker’s location in real time, with data continuously updating via MQTT. The satellite count was also visualized to indicate connection strength.</li>
+      <li><strong>Custom Alerts: </strong>Notifications were sent when the tracker left a designated boundary, ensuring prompt awareness of potential issues.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+      <h2 class="title">Explore the Project Yourself</h2>
+      <p>
+        If you're interested in checking out the source code for the tracker project, you can access the GitHub repository below.
+      </p>
       <a href="https://github.com/mattyc66" target="_blank">
         <button class="button is-ghost">Check out the code Here</button>
       </a>

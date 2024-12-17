@@ -11,11 +11,14 @@
   <img src="assets/placeholder.jpg" alt="main-waq-img" class="imagetop">
   <div class="container">
     <p>
-      Cras in nibh lacinia, venenatis nisi et, auctor urna. Donec pulvinar lacus sed diam dignissim, 
-      ut eleifend eros accumsan. Phasellus non tortor eros. Ut sed rutrum lacus. Etiam purus nunc, 
-      scelerisque quis enim vitae, malesuada ultrices turpis. Nunc vitae maximus purus, nec consectetur dui. 
-      Suspendisse euismod, elit vel rutrum commodo, ipsum tortor maximus dui, sed varius sapien odio 
-      vitae est. Etiam at cursus metus. 
+      Waqq.ly is a cloud-based web application designed to connect dog walkers with local dog owners. The platform enables dog 
+      owners to find reliable dog walkers in their area. The application provides a seamless user experience, using a map interface to display the 
+      locations of dog walkers. Dog walkers can also create profiles with relevant information, making it easier for dog owners to find trustworthy walkers 
+      based on their needs. The application was built with scalability and flexibility in mind, using cloud technologies to ensure high performance 
+      even as the user base grows. It utilizes Firebase for authentication, real-time database management, and storage, while also integrating various 
+      third-party APIs for additional functionality. The app provides essential features such as user authentication, map tracking of walkers, and secure 
+      storage of user data and images. Hosted on AWS, Waqq.ly ensures that the platform can scale with demand, offering a reliable and efficient solution for 
+      dog owners and walkers.
     </p>
   </div>
 </section>
@@ -23,19 +26,44 @@
 
 <section class="section">
   <div class="container">
-
+    <h2 class="title">How it was devloped</h2>
+    <p>
+      Waqq.ly was developed using a combination of React, Firebase, and cloud services to create a scalable and efficient web application. The frontend was 
+      designed with React to provide a dynamic and interactive user experience. React components, including reusable elements like the navigation bar, were 
+      utilized to streamline the development process. The application uses the React Leaflet library to display a map on the main page, showing the real-time 
+      locations of dog walkers.
+      <br><br>
+      Firebase was used to handle user authentication, real-time database management, and storage. User credentials are stored in Firebase Authentication, while 
+      profile data (such as names, postcodes, and descriptions) and images are stored in Firebase's Real-Time Database and Storage, respectively. This setup 
+      allows users to log in, retrieve their information, and interact with the app easily.
+      <br><br>
+      The backend was supported by a microservice built using Express and Docker. The fetchCoordinates function, which retrieves geolocation data from Google Maps
+       based on user-provided postcodes, was turned into a containerized microservice. This service was deployed on Google Cloud Run, allowing for easy scaling 
+       and management.
+      <br><br>
+      For deployment, the code was pushed to a GitHub repository, which was integrated with AWS Amplify for continuous deployment. Every time the code was updated
+      in the GitHub repository, AWS Amplify automatically redeployed the updated version of the app, ensuring seamless updates and minimal downtime.
+      <br><br>
+      The combination of these technologies—React for the frontend, Firebase for real-time data handling, Express for backend microservices, Docker for 
+      containerization, and AWS Amplify for deployment—enabled the creation of a fully functional, scalable web app. The integration of these tools ensured that 
+      Waqq.ly not only met the functional requirements of dog walkers and owners but also provided a reliable and cost-effective solution for managing the 
+      platform’s growth.
+    </p>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-      <h2 class="title">Section 3</h2>
-      <p>SUMMARY OR SOMETHING</p>
+      <h2 class="title">Explore Waqqly</h2>
+      <p>
+        If you'd like to explore Waqq.ly for yourself or dive into the source code, 
+        you can use the buttons below to access both the live web app and the GitHub repository.
+      </p>
       <a href="https://github.com/mattyc66" target="_blank">
         <button class="button is-ghost">Check out the code Here</button>
       </a>
       <a href="https://main.d1jd6blzsp64xs.amplifyapp.com/" target="_blank">
-        <button class="button is-ghost">Visit website</button>
+        <button class="button is-ghost">Visit Waqqly</button>
       </a>
   </div>
 </section>
