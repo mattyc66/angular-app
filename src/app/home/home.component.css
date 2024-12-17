@@ -48,6 +48,7 @@ html.theme-dark, body.theme-dark {
 
 .work-item:hover {
     transform: translateY(-5px);
+    background-color: #444444;
 }
 
 
