@@ -3,6 +3,16 @@ html.theme-dark, body.theme-dark {
     color: #ffffff; 
   }
 
+html {
+    height: 100%; 
+    margin: 0;          
+    padding: 0;         
+    overflow-x: hidden; 
+    overflow-y: auto;   
+}
+
 .imagetop {
-  margin-bottom: 40px
+  margin-bottom: 40px;
+  max-width: 50rem;
+  max-height: 50rem;
 }

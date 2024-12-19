@@ -3,6 +3,29 @@ html.theme-dark, body.theme-dark {
     color: #ffffff; 
   }
 
+html {
+    height: 100%;
+    margin: 0;          
+    padding: 0;         
+    overflow-x: hidden; 
+    overflow-y: auto;   
+}
+
 .p {
   margin-bottom: 20px; /* Add space between paragraphs */
+}
+
+strong {
+  color: white;
+  font-weight: bolder;
+  font-size: large;
+  
+}
+
+li {
+  list-style: disc;
+}
+
+li::marker{
+  color: aliceblue;
 }

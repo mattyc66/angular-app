@@ -3,6 +3,13 @@ html.theme-dark, body.theme-dark {
     color: #ffffff; 
   }
 
+html {
+    height: 100%;
+    margin: 0;          
+    padding: 0;         
+    overflow-x: hidden; 
+    overflow-y: auto;   
+}
 
 .image {
     max-width: 100%;     
@@ -11,19 +18,21 @@ html.theme-dark, body.theme-dark {
     margin: 0 auto;       
 }
 
-.columns.is-vcentered {
-    display: flex;
-    align-items: center;  
+.columns {
+    margin-left: 390px;
+    margin-right: 390px;
 }
 
 
 .column {
-    padding: 0;
-}
-
-.column.is-one-third {
     display: flex;
-    justify-content: center; 
-    align-items: center;    
+    border-width: 5px;
+    border-color: #ffffff;  
 }
 
+.column.is-two-thirds{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}

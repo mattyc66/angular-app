@@ -1,15 +1,15 @@
 <div class="navbar is-dark"> 
     <div class="navbar-brand">
       <a class="navbar-item" href="/">
-        <img src="" alt="Logo" style="max-height: 50px;">
+        <i class="fa-solid fa-house"></i>
       </a>
     </div>
     <div class="navbar-menu">
         <div class="navbar-end">
-            <a class="navbar-item" [routerLink]="['/']" [fragment]="'showcase'" >
+            <a class="navbar-item" (click)="navShow()" >
                 Showcase
             </a>
-            <a class="navbar-item" [routerLink]="['/']" [fragment]="'contact'">
+            <a class="navbar-item" (click)="navCont()">
                 Contact
             </a>     
         </div>

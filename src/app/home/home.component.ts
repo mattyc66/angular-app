@@ -12,6 +12,8 @@ import { getDatabase, ref, set } from 'firebase/database';
 export class HomeComponent implements AfterViewInit {
   constructor(private router: Router, private route: ActivatedRoute) { }
 
+
+  //old code REMOVE
   ngAfterViewInit(): void {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
