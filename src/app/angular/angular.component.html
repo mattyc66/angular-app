@@ -1,0 +1,97 @@
+<html class="theme-dark">
+<section class="hero is-medium is-link">
+    <div class="hero-body">
+      <div class="container">
+        <p class="title">Angualar App</p>
+        <p class="subtitle">angular based web application</p>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container">
+        <h2 class="title">Introduction to the Angular App</h2>
+        <p>
+            This Angular web application is the very site you're currently viewing. It serves as my personal digital portfolio, designed to showcase my skills, experiences, and personal projects. Built with Angular, the app provides a smooth, dynamic experience, ensuring easy navigation through different sections while highlighting my professional abilities.            <br><br>
+            To ensure a responsive and modern design, Bulma CSS was used for the styling. Bulma provides a clean and flexible layout system, with easy-to-use components that help make the app look professional across all devices. Additionally, custom CSS has been incorporated to fine-tune some unique design elements, such as hover effects, card animations, and other visual enhancements that make the website stand out.
+            <br><br>
+            The app is structured to allow for future scalability and maintainability. As I continue to grow as a developer, I can easily update the content, showcase new skills, and even integrate more advanced features or frameworks as needed.
+        </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+        <h2 class="title">Continuous Intergration and Deployment</h2>
+        <p>
+            One of the primary advantages of this web application is its seamless Continuous Integration (CI) and Continuous Deployment (CD) setup, which is 
+            powered by AWS Amplify. The entire app is hosted directly from its GitHub repository, allowing for automatic deployment every time I push new 
+            changes or updates to the codebase. This means I don’t need to manually deploy the app every time there’s an update – it happens automatically, 
+            streamlining the process and ensuring that the most up-to-date version of the portfolio is always live. This setup allows for quick development cycles, 
+            where I can focus on coding, testing, and adding new features, knowing that deployment is taken care of automatically.
+        </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+        <h2 class="title">Cloud Database</h2>
+        <p>
+            A key feature of this app is its integration with Firebase Realtime Database, which provides a cloud-based database for storing data in real time. This integration is primarily used for the “Get in Touch” form, where users can submit their names, emails, and messages. Once the form is submitted, the data is automatically sent to Firebase and stored securely in real time.
+            <br><br>
+            Firebase provides a highly scalable, secure, and reliable database solution, which means that even as the number of users and submissions increases, the app remains performant and efficient. Using Firebase’s Realtime Database, users' messages are saved immediately and can be accessed instantly, providing a dynamic experience.
+            <br><br>
+            The connection between the app and Firebase is made possible through the FirebaseConfig file, which contains the necessary credentials and configuration to allow the Angular app to authenticate and connect to the Firebase Realtime Database
+        </p>
+        <img src="assets/firebaseConfig.png" alt="dbconfig" class="image" style="width:600px;height:300px;">
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+        <h2 class="title">Key features</h2>
+        <br>
+        <!-- auto scroll buttons -->
+        <h3 class="subtitle">Smooth Scrolling Navigation</h3>
+        <p>
+            To improve user experience and streamline navigation, this app features smooth scrolling functionality for both 
+            the Showcase and Contact sections. When users click on the respective buttons in the navigation bar, the page will 
+            automatically scroll to the targeted section, either the previous work showcase or the get in touch Contact. This ensures that visitors can quickly 
+            find the information they’re looking for without having to manually search through the page, creating a more 
+            intuitive and user-friendly experience.
+        </p>
+        <br>
+        <!-- contact form -->
+        <h3 class="subtitle">Get in Touch Form</h3>
+        <p>
+            The Get in Touch form allows visitors to reach out directly by providing their name, email, and a message. This feature is designed for quick 
+            communication, whether it's for inquiries, feedback, or other reasons. Once submitted, the form sends the data directly to the Firebase Realtime 
+            Database, ensuring that messages are stored securely and can be accessed instantly. The form also includes validation to ensure users provide the 
+            required fields before submission, preventing spam or incomplete entries.
+        </p>
+        <img src="assets/contact.png" alt="keyftr" class="image" style="width:900px;height:300px;">
+        <br>
+        <!-- footer nav -->
+         <h3 class="subtitle">Social Media Links in the Footer</h3>
+         <p>
+            To further improve connectivity, the app includes clickable social media icons for Twitter, LinkedIn, and Instagram in the footer. Clicking any of 
+            these icons will open the respective social media profiles, allowing users to connect with me on the platforms of their choice. This feature provides 
+            a simple and effective way for users to stay updated on my work, follow my posts, and engage with me across different channels.
+         </p>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container">
+        <h2 class="title">Check Out the Code Yourself</h2>
+        <p>
+            Want to see how everything works behind the scenes? You can view the full source code for this Angular app on GitHub.
+        </p>
+        <a href="https://github.com/mattyc66/angular-app" target="_blank">
+            <button class="button is-ghost">Check out the code Here</button>
+        </a>
+    </div>
+  </section>
+  </html>
