@@ -12,86 +12,45 @@
         </div>
     </section>
 
-
     <section class="section" id="showcase">
     <div class="container" id="work">
         <h2 class="title is-underlined">previous work</h2>
         <!-- waqqly card -->
         <div role="list" class="work-list">
-            <div role="listitem" class="work-item">
-                <a routerLink="waqqly" class="card"> 
-                <div class="inner-card">
-                    <img src="assets/waqqly_transparent1.png" alt="waq" class="image" style="width:400px;height:300px;">
-                </div>
-                <div class="lower-card">
-                    <h3 class="h3">Waqqly</h3>
-                    <p class="paragraph">
-                        Modern web application built with react integrated with a cloud 
-                        based database and utilising microservices.
-                    </p>
-                </div>
-                </a>   
-            </div>
+            <app-card
+            [imageUrl]="'assets/React.png'"
+            [title]="'Waqqly'"
+            [text]="'Modern web application built with react integrated with a cloud based database and utilising microservices.'"
+            [link]="'waqqly'"
+            ></app-card>
             <!-- tracker card -->
-            <div role="listitem" class="work-item">
-                <a routerLink="track" class="card"> 
-                    <div class="inner-card">
-                        <img src="assets/micro.png" alt="track" class="image" style="width:400px;height:300px;">
-                    </div>
-                    <div class="lower-card">
-                        <h3 class="h3">Tracker</h3>
-                        <p class="paragraph">
-                            A GPS tracker built with an ESP32 module and GPS sensor, 
-                            transmitting real-time GPS coordinates for remote monitoring and tracking.
-                        </p>
-                    </div>
-                </a>   
-            </div>
+            <app-card
+            [imageUrl]="'assets/c2-logo.png'"
+            [title]="'Tracker'"
+            [text]="'A GPS tracker built with an ESP32 module and GPS sensor, transmitting real-time GPS coordinates for remote monitoring and tracking.'"
+            [link]="'tracker'"
+            ></app-card>
             <!-- java card -->
-            <div role="listitem" class="work-item">
-                <a routerLink="java" class="card"> 
-                    <div class="inner-card">
-                        <img src="assets/Java-Logo-700x394.png" alt="jav" class="image" style="width:400px;height:300px;">
-                    </div>
-                    <div class="lower-card">
-                        <h3 class="h3">Java</h3>
-                        <p class="paragraph">
-                            A Java library application for managing books and movies, featuring 
-                            an integrated SQL database for seamless data handling.
-                        </p>
-                    </div>
-                    </a>   
-            </div>
+            <app-card
+            [imageUrl]="'assets/Java-Logo-700x394.png'"
+            [title]="'Java'"
+            [text]="'A Java library application for managing books and movies, featuring an integrated SQL database for seamless data handling.'"
+            [link]="'java'"
+            ></app-card>   
             <!--angular card-->
-            <div role="listitem" class="work-item">
-                <a routerLink="angular" class="card">
-                    <div class="inner-card">
-                        <img src="assets/angular.png" alt="anglr" class="image" style="width:400px;height:300px;">
-                    </div>
-                    <div class="lower-card">
-                        <h3 class="h3">Angular</h3>
-                        <p>
-                            Interactive web application built with Angular, highlighting professional 
-                            projects and skills with dynamic design and responsive functionality.
-                        </p>
-                    </div>
-                </a>
-            </div>
+            <app-card
+            [imageUrl]="'assets/angular.png'"
+            [title]="'Angular'"
+            [text]="'Interactive web application built with Angular, highlighting professional projects and skills with dynamic design and responsive functionality.'"
+            [link]="'angular'"
+            ></app-card>
             <!-- python card -->
-             <div role="listitem" class="work-item">
-                <a routerLink="python" class="card">
-                    <div class="inner-card">
-                        <img src="assets/python.png" alt="python" class="image" style="width:400px;height:300px;">
-                    </div>
-                    <div class="lower-card">
-                        <h3 class="h3">Python</h3>
-                        <p> 
-                            Python application designed for a gift wrapping service, featuring a quote 
-                            generator, customizable designs, and receipt printing
-                        </p>
-                    </div>
-                </a>
-             </div>
+            <app-card
+            [imageUrl]="'assets/python.png'"
+            [title]="'Python'"
+            [text]="'Python application designed for a gift wrapping service, featuring a quote generator, customizable designs, and receipt printing'"
+            [link]="'python'"
+            ></app-card>
         </div>
     </div>
     </section>
@@ -101,7 +60,7 @@
             <div class="columns is-vcentered">
                 <!--left column-->
                 <div class="column is-one-third">
-                    <img src="assets/qQidlw.jpg" alt="bio image" class="image bio">
+                    <img src="assets/pfp2.jpg" alt="bio image" class="image bio">
                 </div>
                 <!--right column-->
                 <div class="column is-half">

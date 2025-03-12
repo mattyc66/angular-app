@@ -1,11 +1,12 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { RouterModule, ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 import { getDatabase, ref, set } from 'firebase/database';
+import { CardComponent } from "../card/card.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, CardComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
