@@ -1,0 +1,110 @@
+<app-project-page
+[title]="'Animal Tracker Project'"
+[subtitle]="'tracking systems'"
+[repoLinks]="[
+    {url: 'https://github.com/mattyc66/GNSS-GPS-Tracking-systems', label: 'Check out the System 1 + 2 code Here'},
+    {url: 'https://github.com/mattyc66/LoRa-Tracking-System', label: 'Check out the System 3 Code Here'}
+    ]">
+    <section class="section">
+        <div class="container">
+            <h2 class="title">Introduction</h2>
+            <p>
+                This project formed my master's dissertation, building on animal tracking research I'd previously explored 
+                at bachelor's level. Rather than focusing on a single build, this project set out to identify the practical 
+                issues that commonly affect animal tracking technology, namely cost, power efficiency, positional accuracy, 
+                and transmission reliability, and to design, build, and test multiple prototype systems in an attempt to 
+                address them.
+            </p>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <h2 class="title">Research and System Requirements</h2>
+            <p>
+                The project began with a review of current animal tracking technologies to understand their applications, 
+                limitations, and the challenges they commonly face. This research was used to define a clear set of 
+                requirements for a proposed system, and to identify hardware and software best suited to meeting them. 
+                Rather than settling on a single design, three separate prototype systems were developed using different 
+                hardware combinations, allowing their performance to be compared directly against one another.
+            </p>
+            <br>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <h2 class="title">Satellite-Based Systems (Systems 1 &amp; 2)</h2>
+            <p>
+                Systems 1 and 2 were both built around satellite-based positioning and written in C++ using PlatformIO. 
+                Since GPS is one of several GNSS constellations, both systems could share the same codebase without 
+                modification, using the TinyGPSPlus library to parse NMEA data from the GPS/GNSS receivers into a 
+                structured format. TinyGSM handled communication with the SIM7600E modem, simplifying network registration 
+                and data transmission, while ArduinoHttpClient and ESP_SSLClient worked alongside it to enable secure 
+                HTTPS communication with a Firebase database. An INA219 current sensor, interfaced through the 
+                Adafruit_INA219 library, provided real-time voltage, current, and power readings for power efficiency testing.
+            </p>
+            <br>
+            <div class="columns">
+                <div class="column"><img src="assets/System2.jpg" alt="" class="image"></div>
+                <div class="column"><img src="assets/sys2schem.png" alt="" class="image"></div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <h2 class="title">LoRa-Based Systems (System 3)</h2>
+            <p>
+                System 3 took a different approach, using LoRa for long-range communication instead of a satellite modem. 
+                It shared some of the same components as Systems 1 and 2, including TinyGPSPlus for GNSS parsing and the 
+                INA219 sensor for power measurements, but replaced satellite connectivity with an EBYTE E220 LoRa module, 
+                managed through the EByte LoRa E220 library, to handle configuration and long-range data transmission.
+            </p>
+            <br>
+            <div class="columns">
+                <div class="column"><img src="assets/System3_transmitter.jpg" alt="" class="image"></div>
+                <div class="column"><img src="assets/sys3schem.png" alt="" class="image"></div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <h2 class="title">Testing and Comparative Results</h2>
+            <P>
+                Each system was built and run for a fixed period, with performance data logged and processed using a 
+                Python script. Testing focused on power efficiency, positional accuracy, and transmission reliability, 
+                while acknowledging the limitations of testing in a controlled environment rather than real-world 
+                deployment. Power usage decreased consistently from System 1 through to System 3, with the LoRa-based 
+                System 3 showing the lowest and most stable voltage, current, and power draw, demonstrating the energy 
+                efficiency of LoRa over satellite communication.
+                <br><br>
+                System 3 also achieved a considerably higher transmission success rate at 92.8%, along with faster and 
+                more consistent response times, largely because it only needed to send data to a nearby receiver rather 
+                than uploading directly to a database as Systems 1 and 2 did. Positional accuracy told a more mixed story: 
+                System 2 showed improved satellite visibility and accuracy over System 1 using the same GNSS approach, 
+                but System 3 recorded a larger positional error than System 2 despite using the same GNSS module, 
+                possibly due to sample size or other experimental factors. Overall, the 4G-based systems offered slightly 
+                better positional accuracy at the cost of power consumption and reliability, while the LoRa-based system 
+                provided reliable, low-latency communication with minimal power usage.
+            </P>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <h2 class="title">Proposed Future System</h2>
+            <p>
+                Based on the testing data, the recommended future system combines LoRa communication with GNSS tracking, 
+                using LoRa for its lower power consumption, faster response time, and higher transmission reliability, 
+                and GNSS over standard GPS for its improved accuracy and satellite availability. The design also proposes 
+                several enhancements beyond the tested prototypes: a solar panel and charging circuit to support long-term 
+                remote deployment without manual battery changes, and a move from separate hardware modules to a custom 
+                PCB to reduce cost, size, and power usage at scale.
+                <br><br>
+                On the software side, event-driven transmission would send location data only once a movement threshold 
+                is met, combined with time-based logic to reduce transmission frequency during quiet periods such as 
+                nighttime. A hybrid mesh network architecture is also proposed in place of a standard LoRa star topology, 
+                allowing data to hop between nodes to improve range and reliability, though this introduces trade-offs 
+                around latency and the need for at least one internet-connected gateway.
+            </p>
+        </div>
+    </section>
+</app-project-page>
+

@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
   templateUrl: './card.component.html',
   styleUrl: './card.component.css'
 })
+
 export class CardComponent {
   @Input() imageUrl!: string;
   @Input() title!: string;

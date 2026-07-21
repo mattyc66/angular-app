@@ -1,0 +1,49 @@
+<app-project-page
+[title]="'All Projects'"
+[subtitle]="'collection of all significant projects'"
+[repoLinks]="[
+    {url: 'https://github.com/mattyc66?tab=repositories', label: 'Check out GitHub repositories here'}
+    ]">
+    <section class="section">
+        <div class="container">
+            <div class="card-list" role="list">
+                <app-card
+                    [imageUrl]="'assets/waq-home.png'"
+                    [title]="'Waqqly'"
+                    [text]="'Modern web application built with react integrated with a cloud based database and utilising microservices.'"
+                    [link]="'waqqly'"
+                ></app-card>
+                <app-card
+                    [imageUrl]="'assets/java-bookTab.png'"
+                    [title]="'Library Loans System'"
+                    [text]="'A Java library application for managing books and movies, featuring an integrated SQL database for seamless data handling.'"
+                    [link]="'java'"
+                ></app-card>
+                <app-card
+                    [imageUrl]="'assets/appMain.PNG'"
+                    [title]="'Comic Tracker'"
+                    [text]="'Electron and React desktop app for managing personal comic reading list, with cover art, progress tracking, and import/export support'"
+                    [link]="'comic'"
+                ></app-card>
+                <app-card
+                    [imageUrl]="'assets/QuoteGenPreview.png'"
+                    [title]="'Quote Generator'"
+                    [text]="'Python application designed for a gift wrapping service, featuring a quote generator, customizable designs, and receipt printing'"
+                    [link]="'python'"
+                ></app-card>
+                <app-card
+                    [imageUrl]="'assets/angular.png'"
+                    [title]="'portfolio Website'"
+                    [text]="'Interactive web application built with Angular, highlighting professional projects and skills with dynamic design and responsive functionality.'"
+                    [link]="'angular'"
+                ></app-card>
+                <app-card
+                    [imageUrl]="'assets/micro.png'"
+                    [title]="'Animal Trackers'"
+                    [text]="'Prototype animal tracking systems built with ESP32, GNSS, and LoRa/4G modules, comparing power efficiency, accuracy, and transmission reliability for remote wildlife monitoring.'"
+                    [link]="'Track'"
+                ></app-card>
+            </div>
+        </div>
+    </section>
+</app-project-page>

@@ -28,16 +28,14 @@ export class HomeComponent implements AfterViewInit {
       }
     });
   }
-
-  
   
   sendMessage(event: Event): void {
     event.preventDefault();
 
   const target = event?.target as HTMLFormElement;
-  const name = (target.elements.namedItem("name") as HTMLInputElement).value;
-  const email = (target.elements.namedItem("email") as HTMLInputElement).value;
-  const message = (target.elements.namedItem("message") as HTMLTextAreaElement).value;
+  const name = (<HTMLInputElement>target.elements.namedItem("name")).value;
+  const email = (<HTMLInputElement>target.elements.namedItem("email")).value;
+  const message = (<HTMLTextAreaElement>target.elements.namedItem("message")).value;
 
   const db = getDatabase();
   const timestamp = Date.now();

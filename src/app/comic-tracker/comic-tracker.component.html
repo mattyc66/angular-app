@@ -1,0 +1,86 @@
+<app-project-page
+[title]="'Electron Project'"
+[subtitle]="'comic tracker app'"
+[repoLinks]="[
+    {url: 'https://github.com/mattyc66/comic-tracker', label: 'Check out the code Here'}
+    ]">
+    <section class="section">
+        <img src="assets/appMain.PNG" alt="main library view of comic tracker" class="image py-3">
+        <div class="container">
+            <h2 class="title">Architecture and Storage</h2>
+            <p>
+                The app is built with Electron and React, using IPC handlers in the main process to bridge the 
+                renderer with the file system, since a browser sandbox has no direct disk access. Comic data is 
+                persisted as JSON, and cover images were originally stored as base64 strings inside that same file. 
+                This was later switched to storing images as plain files on disk, referenced by path instead. The 
+                change reduced the size of the JSON file considerably, sped up initial load time, and removed a 
+                noticeable delay that base64 decoding was causing when applying sidebar filters.
+            </p>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-two-thirds">
+                    <h2 class="title">Adding and Editing Comics</h2>
+                    <p>
+                        New comics are added through a form capturing title, status, chapter progress, and a cover image. 
+                        Each comic is assigned a unique ID using <code>Date.now()</code>, and its cover image is renamed to 
+                        match that ID plus its original file extension. Only the ID and extension are stored in the JSON 
+                        entry, with the actual image kept in a dedicated cover images folder, keeping the data file lightweight 
+                        and the images easy to locate on disk.
+                    </p>
+                </div>
+                <div class="column is-narrow"><img src="assets/appAddForm.PNG" alt="add comic item form" class="image"></div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-narrow"><img src="assets/appUpdateForm.PNG" alt="" class="image"></div>
+                <div class="column is-two-thirds">
+                    <h2 class="title">Multiple Links and Primary Sources</h2>
+                    <p>
+                        Comics often have more than one place to read them, so each entry stores its links as a nested array 
+                        rather than a single value. One link can be flagged as primary, shown with a star icon in the edit 
+                        form that toggles which link holds that status. The read button on each comic card uses whichever 
+                        link is currently marked primary, so switching source sites is as simple as clicking the star next 
+                        to a different link.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-two-thirds">
+                    <h2 class="title">Search, Filtering, and UI performance</h2>
+                    <p>
+                        With close to a hundred comics tracked, several performance considerations went into the interface. 
+                        The search bar is debounced to stop it re-filtering on every keystroke, which was causing noticeable 
+                        lag. The library list itself uses <code>&#64;tanstack/react-virtual</code> to render only the cards 
+                        currently in view, keeping scrolling smooth regardless of collection size. Quick actions like editing 
+                        or deleting a comic are handled through modals rather than navigating away, avoiding unnecessary 
+                        reloads of the full list.
+                    
+                    </p>
+                </div>
+                <div class="column is-narrow"><img src="assets/cardDropDown.PNG" alt="" class="image"></div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <h2 class="title">Import and Export</h2>
+            <p>
+                The app supports backing up and transferring a library using adm-zip. Exporting builds a 
+                comics-export.zip file containing the cover images and JSON data for whichever comics are currently 
+                visible under the active filters, rather than the entire library. Importing reads a zip in the same 
+                format and merges its contents into the app's existing JSON data and cover images folder, making it 
+                straightforward to move a library between machines or restore from a backup.
+            </p>
+        </div>
+    </section>
+</app-project-page>

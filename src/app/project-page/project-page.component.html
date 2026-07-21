@@ -1,0 +1,27 @@
+<html class="theme-dark">
+    <section class="hero is-medium is-link">
+        <div class="hero-body">
+            <div class="container">
+                <p class="title">{{ title }}</p>
+                <p class="subtitle">{{ subtitle }}</p>
+            </div>
+        </div>
+    </section>
+
+    <ng-content></ng-content>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="title">Explore the Project yourself</h2>
+            <p>
+                If you'd like to explore the source code for {{title}} the GitHub repository is available below.
+            </p>
+            @for (link of repoLinks; track link.url) {
+                <a href="{{link.url}}" target="_blank">
+                    <button class="button is-ghost">{{link.label}}</button>
+                </a>
+            }
+        </div>
+    </section>
+</html> 
+    

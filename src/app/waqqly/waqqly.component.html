@@ -1,72 +1,86 @@
-<html class="theme-dark">
-<section class="hero is-medium is-link">
-    <div class="hero-body">
-      <div class="container">
-        <p class="title">Waqqly</p>
-        <p class="subtitle">react based web application</p>
-      </div>
-    </div>
-</section>
-
-<section class="section has-text-centered">
-  <h2 class="title">what is waqqly?</h2>
-  <img src="assets/waq-home.png" alt="main-waq-img" class="imagetop">
-  <div class="container">
-    <p>
-      Waqq.ly is a cloud-based web application designed to connect dog walkers with local dog owners. The platform enables dog 
-      owners to find reliable dog walkers in their area. The application provides a seamless user experience, using a map interface to display the 
-      locations of dog walkers. Dog walkers can also create profiles with relevant information, making it easier for dog owners to find trustworthy walkers. 
-      The application was built with scalability and flexibility in mind, using cloud technologies to ensure high performance 
-      even as the user base grows. It utilizes Firebase for authentication, real-time database management, and storage, while also integrating various 
-      third-party APIs for additional functionality. The app provides essential features such as user authentication, map tracking of walkers, and secure 
-      storage of user data and images. Hosted on AWS, Waqq.ly ensures that the platform can scale with demand, offering a reliable and efficient solution for 
-      dog owners and walkers.
-    </p>
-  </div>
-</section>
-
-
-<section class="section">
-  <div class="container">
-    <h2 class="title">How it was devloped</h2>
-    <p>
-      Waqq.ly was developed using a combination of React, Firebase, and cloud services to create a scalable and efficient web application. The frontend was 
-      designed with React to provide a dynamic and interactive user experience. React components, including reusable elements like the navigation bar, were 
-      utilized to streamline the development process. The application uses the React Leaflet library to display a map on the main page, showing the real-time 
-      locations of dog walkers.
-      <br><br>
-      Firebase was used to handle user authentication, real-time database management, and storage. User credentials are stored in Firebase Authentication, while 
-      profile data (such as names, postcodes, and descriptions) and images are stored in Firebase's Real-Time Database and Storage, respectively. This setup 
-      allows users to log in, retrieve their information, and interact with the app easily.
-      <br><br>
-      The backend was supported by a microservice built using Express and Docker. The fetchCoordinates function, which retrieves geolocation data from Google Maps
-       based on user-provided postcodes, was turned into a containerized microservice. This service was deployed on Google Cloud Run, allowing for easy scaling 
-       and management.
-      <br><br>
-      For deployment, the code was pushed to a GitHub repository, which was integrated with AWS Amplify for continuous deployment. Every time the code was updated
-      in the GitHub repository, AWS Amplify automatically redeployed the updated version of the app, ensuring seamless updates and minimal downtime.
-      <br><br>
-      The combination of these technologies—React for the frontend, Firebase for real-time data handling, Express for backend microservices, Docker for 
-      containerization, and AWS Amplify for deployment—enabled the creation of a fully functional, scalable web app. The integration of these tools ensured that 
-      Waqq.ly not only met the functional requirements of dog walkers and owners but also provided a reliable and cost-effective solution for managing the 
-      platform’s growth.
-    </p>
-  </div>
-</section>
-
-
-
-<!-- ADD CORRECT TRACKER CODE TO GITHUB AND CORRECT BUTTON LINK -->
-<section class="section">
-  <div class="container">
-      <h2 class="title">Explore Waqqly</h2>
-      <p>
-        If you'd like to explore Waqq.ly for yourself or dive into the source code, 
-        you can use the buttons below to access both the live web app and the GitHub repository.
-      </p>
-      <a href="https://github.com/mattyc66/waqqly" target="_blank">
-        <button class="button is-ghost">Check out the code Here</button>
-      </a>
-  </div>
-</section>
-</html>
+<app-project-page
+[title]="'Waqqly'"
+[subtitle]="'React based web application'"
+[repoLinks]="[
+    {url: 'https://github.com/mattyc66/waqqly', label: 'Check out the code Here'}
+    ]">
+    <section class="section has-text-centered">
+        <h2 class="title">What is Waqqly</h2>
+        <img src="assets/waq-home.png" alt="" class="imagetop">
+        <div class="container">
+            <p>
+                Waqq.ly is a cloud-based web application designed to connect dog walkers with local dog owners. The platform enables dog 
+                owners to find reliable dog walkers in their area. The application provides a seamless user experience, using a map interface to display the 
+                locations of dog walkers. Dog walkers can also create profiles with relevant information, making it easier for dog owners to find trustworthy walkers. 
+                The application was built with scalability and flexibility in mind, using cloud technologies to ensure high performance 
+                even as the user base grows. It utilizes Firebase for authentication, real-time database management, and storage, while also integrating various 
+                third-party APIs for additional functionality. The app provides essential features such as user authentication, map tracking of walkers, and secure 
+                storage of user data and images. Hosted on AWS, Waqq.ly ensures that the platform can scale with demand, offering a reliable and efficient solution for 
+                dog owners and walkers.
+            </p>
+        </div>
+    </section>
+        <section class="section">
+        <div class="container">
+            <h2 class="title">Meeting the Requirements</h2>
+            <p>
+                Several decisions were made specifically to satisfy the brief's non-functional requirements. Firebase was 
+                chosen for authentication and data storage partly to reduce infrastructure management overhead, though this 
+                came with an inherent trade-off around vendor lock-in, weighed against the development speed it offered. 
+                Containerising the geocoding microservice with Docker addressed portability and virtualisation directly, 
+                since the container could be deployed to Google Cloud Run independently of the rest of the stack, rather than 
+                being tied to a specific server environment. Cloud Run's autoscaling also addressed resource management and 
+                cost control together, since it scales down automatically when the service isn't in use rather than requiring 
+                a constantly running server. Reusability was considered in the frontend through shared React components, 
+                such as the navigation bar, used consistently across pages.
+            </p>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-narrow"><img src="assets/waqqly-main.PNG" alt="" class="image" style="height: 400px; width: 600px;"></div>
+                <div class="column is-two-thirds">
+                    <h2 class="title">Containerisation and the Geocoding Microservice</h2>
+                    <p>
+                        Locating dog walkers required converting a user's postcode into map coordinates. This was implemented 
+                        as a standalone microservice using Express, wrapping a fetchCoordinates function that queries the 
+                        Google Maps API. The microservice was containerised using Docker and deployed to Google Cloud Run, 
+                        which handles autoscaling and integrates easily with other Google Cloud services. Separating this 
+                        functionality into its own containerised service, rather than folding it into the main app, kept 
+                        it independently deployable and scalable regardless of load on the rest of the application. On the 
+                        frontend, the React Leaflet library was used to plot walker locations on an interactive map.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-two-thirds">
+                    <h2 class="title">Authentication and NoSQL Database</h2>
+                    <p>
+                        User authentication and data storage were handled through Firebase, chosen as a NoSQL, cloud-based 
+                        solution suited to the app's relatively simple, document-like data (user profiles, postcodes, and 
+                        descriptions). Firebase Authentication manages user credentials and login, while the Real-Time 
+                        Database stores profile information and Firebase Storage holds profile images, allowing users to 
+                        log in and retrieve their data with minimal custom backend code.  
+                    </p>
+                </div>
+                <div class="column is-narrow"><img src="assets/waqqly-register.PNG" alt="" class="image" style="height: 400px; width: 600px;"></div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <h2 class="title">Deployment</h2>
+            <p>
+                The React frontend was version-controlled in a GitHub repository connected to AWS Amplify, which automatically 
+                redeployed the app whenever new changes were pushed. Combined with the containerised microservice on Cloud Run, 
+                this gave the application two independently deployable parts, each scaling and updating without affecting the 
+                other.
+            </p>
+        </div>
+    </section>
+</app-project-page>

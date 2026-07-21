@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { ProjectPageComponent } from '../project-page/project-page.component';
 
 @Component({
-  selector: 'app-angular',
+  selector: 'app-mstracker',
   standalone: true,
   imports: [ProjectPageComponent],
-  templateUrl: './angular.component.html',
-  styleUrl: './angular.component.css'
+  templateUrl: './mstracker.component.html',
+  styleUrl: './mstracker.component.css'
 })
-export class AngularComponent {
+export class MStrackerComponent {
 
 }

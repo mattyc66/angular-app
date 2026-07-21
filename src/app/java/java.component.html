@@ -1,72 +1,119 @@
-<html class="theme-dark">
-<section class="hero is-medium is-link">
-    <div class="hero-body">
+<app-project-page
+[title]="'Java Project'"
+[subtitle]="'Libray Loans application'"
+[repoLinks]="[
+    {url: 'https://github.com/mattyc66/library-system', label: 'Check out the code Here'}
+    ]">
+    <section class="section">
         <div class="container">
-            <p class="title">Java work</p>
-            <p class="subtitle">java library application</p>
-        </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-        <h2 class="title">Introduction to the library loan system</h2>
-        <p class="paragraph">
-            The Library Loan System project was developed to simplify the management of library resources such as books and DVDs. Using Java and JavaFX, the 
-            system supports various loanable items, tracks availability, and manages loans and returns. Additional features include user authentication, 
-            overdue fine calculation, item searches, and detailed item reports. With an intuitive interface and object-oriented design principles, the application
-            is tailored for internal library employees, ensuring ease of use and functionality.
-        </p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-    <div class="columns">
-        <div class="column is-narrow"><img src="assets/java-bookTab.png" alt="pic1" class="image"></div>
-        <div class="column is-two-thirds">
-            <h2 class="title">System Design and Navigation</h2>
-            <p>
-                The application was built with a focus on seamless navigation and efficient functionality. A dynamic layout was implemented, allowing different 
-                FXML files to be displayed within the main view instead of navigating through multiple windows. This approach provided a smoother user experience 
-                while maintaining a consistent layout.
-                <br><br>
-                Tabs were used for organizing sections like books and DVDs, offering a clear and intuitive interface. Each page featured unique images to improve 
-                usability and visual appeal. To enhance functionality, the loans page included a date picker, allowing users to test overdue fine calculations by 
-                selecting custom return dates.
+            <h2 class="title">Introduction to the library loan system</h2>
+            <p class="paragraph">
+                The Library Loan System project was developed to simplify the management of library resources such as books and DVDs. Using Java and JavaFX, the 
+                system supports various loanable items, tracks availability, and manages loans and returns. Additional features include user authentication, 
+                overdue fine calculation, item searches, and detailed item reports. With an intuitive interface and object-oriented design principles, the application
+                is tailored for internal library employees, ensuring ease of use and functionality.
             </p>
         </div>
-    </div>
-    </div>
   </section>
-
   <section class="section">
     <div class="container">
-    <div class="columns">
-        <div class="column is-two-thirds is-narrow">
-            <h2 class="title">Refinements and Visual Design</h2>
-            <p>
-                Significant changes were made to the initial wireframe to improve usability. The toolbar was removed to create a cleaner, more focused interface, 
-                while the use of a blue color theme conveyed stability and professionalism. These refinements ensured a cohesive and user-friendly design, aligning 
-                the system’s appearance with its functional goals. By combining thoughtful design elements with robust functionality, the library loan system delivered a reliable solution for library management 
-                tasks
-            </p>
-        </div>
-        <div class="column is-narrow"><img src="assets/java-login.png" alt="pic2" class="image"></div>
-    </div>
-    </div>
-  </section>
-
-
-  <section class="section">
-    <div class="container">
-        <h2 class="title">Explore the project yourself</h2>
+        <h2 class="title">Design, Database, and Tooling</h2>
         <p>
-            If you'd like to explore the source code for the Library Management System or try it out for yourself, the GitHub repository is available below.
+            The brief specified that the design include object-oriented principles, a database, and a GUI built 
+            with JavaFX or AWT/Swing. The system was developed in IntelliJ using JavaFX for the interface, with the 
+            Gluon Scene Builder plugin integrated directly into the IDE, allowing FXML files to be opened in Scene 
+            Builder with a right-click. Books and DVDs were the two loanable item types chosen, each represented by 
+            shared reusable model and controller classes handling the item's ID, name, creator, availability, and 
+            image path, with a MySQL database storing item stock, loan records, and user accounts.
         </p>
-        <a href="https://github.com/mattyc66/library-system" target="_blank">
-            <button class="button is-ghost">Check out the code Here</button>
-        </a>
     </div>
   </section>
-  </html>
+
+  <section class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-narrow"><img src="assets/java-login.png" alt="" class="image"></div>
+            <div class="column is-two-thirds">
+                <h2 class="title">Login and Registration</h2>
+                <p>
+                    On launch, users are prompted to either log in or register a new account. Registration allows a 
+                    user to select between a standard or admin account type, though new accounts require admin approval 
+                    before they can be used, satisfying the brief's requirement for controlled account creation. Once 
+                    logged in, the login window is replaced by the main system view.
+                </p>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-two-thirds">
+                <h2 class="title">Main Interface and Navigation</h2>
+                <p>
+                    The main view uses a BorderPane layout, with a sidebar on the left and the active page content on 
+                    the right. The sidebar, labelled BookWise, provides navigation between Home, Loaned Items, Accounts, 
+                    Sign Out, and Exit, swapping out the right-hand side of the BorderPane depending on the selected 
+                    page. The home view uses tab panes to separate books and DVDs, each containing a search bar and a 
+                    table listing the relevant items, books showing ID, name, and author, DVDs showing ID, title, and 
+                    director, alongside options to view an item's full details or print them to a file.
+                </p>
+            </div>
+            <div class="column is-narrow"><img src="assets/java-bookTab.png" alt="" class="image"></div>
+        </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-narrow"><img src="assets/java-dvdTab.png" alt="" class="image"></div>
+            <div class="column is-two-thirds">
+                <h2 class="title">Item Details and Loaning</h2>
+                <p>
+                    Selecting an item and clicking "View" opens an item view page displaying its cover image alongside 
+                    its details, including ID, name or title, creator, stock, and current availability. A customer name 
+                    can be entered here to loan the item directly. Printing an item's details instead writes its full 
+                    information to a text file, satisfying the brief's requirement to output item details, current 
+                    availability, items on loan, and the earliest return date among any loaned copies.
+                </p>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-two-thirds">
+                <h2 class="title">Loaned Items and Overdue Fines</h2>
+                <p>
+                    The Loaned Items page lists every item currently on loan in a searchable table, showing the item 
+                    name, ID, customer name, product type, return date, and any late fee owed. A return button allows 
+                    staff to process a return directly from this table, with support for adjusting the return date to 
+                    calculate fines for items returned late.
+                </p>
+            </div>
+            <div class="column is-narrow"><img src="assets/java-loanList.png" alt="" class="image"></div>
+        </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-narrow"><img src="assets/java-accounts.png" alt="" class="image"></div>
+            <div class="column is-two-thirds">
+                <h2 class="title">Account Management</h2>
+                <p>
+                    The Accounts page is restricted to admin users, prompting for admin login if a standard account 
+                    attempts to access it. It displays a table of registering accounts, including their username, ID, 
+                    and requested account type, with buttons allowing an admin to approve or deny each registration, 
+                    completing the approval workflow required by the brief.
+                </p>
+            </div>
+        </div>
+    </div>
+  </section>
+</app-project-page>

@@ -13,51 +13,47 @@
     </section>
 
     <section class="section" id="showcase">
-    <div class="container" id="work">
-        <h2 class="title is-underlined">previous work</h2>
-        <!-- waqqly card -->
-        <div role="list" class="work-list">
-            <app-card
-            [imageUrl]="'assets/React.png'"
-            [title]="'Waqqly'"
-            [text]="'Modern web application built with react integrated with a cloud based database and utilising microservices.'"
-            [link]="'waqqly'"
+            <h2 class="title is-underlined">Previous Work</h2>
+            <div class="card-list" role="list">
+                <app-card
+                [imageUrl]="'assets/waq-home.png'"
+                [title]="'Waqqly'"
+                [text]="'Modern web application built with react integrated with a cloud based database and utilising microservices.'"
+                [link]="'waqqly'"
             ></app-card>
-            <!-- tracker card -->
             <app-card
-            [imageUrl]="'assets/c2-logo.png'"
-            [title]="'Tracker'"
-            [text]="'A GPS tracker built with an ESP32 module and GPS sensor, transmitting real-time GPS coordinates for remote monitoring and tracking.'"
-            [link]="'track'"
+                [imageUrl]="'assets/java-bookTab.png'"
+                [title]="'Library Loans System'"
+                [text]="'A Java library application for managing books and movies, featuring an integrated SQL database for seamless data handling.'"
+                [link]="'java'"
             ></app-card>
-            <!-- java card -->
             <app-card
-            [imageUrl]="'assets/Java-Logo-700x394.png'"
-            [title]="'Java'"
-            [text]="'A Java library application for managing books and movies, featuring an integrated SQL database for seamless data handling.'"
-            [link]="'java'"
+                [imageUrl]="'assets/appMain.PNG'"
+                [title]="'Comic Tracker'"
+                [text]="'Electron and React desktop app for managing personal comic reading list, with cover art, progress tracking, and import/export support'"
+                [link]="'comic'"
             ></app-card>   
-            <!--angular card-->
             <app-card
-            [imageUrl]="'assets/angular.png'"
-            [title]="'Angular'"
-            [text]="'Interactive web application built with Angular, highlighting professional projects and skills with dynamic design and responsive functionality.'"
-            [link]="'angular'"
+                [imageUrl]="'assets/QuoteGenPreview.png'"
+                [title]="'Quote Generator'"
+                [text]="'Python application designed for a gift wrapping service, featuring a quote generator, customizable designs, and receipt printing'"
+                [link]="'python'"
             ></app-card>
-            <!-- python card -->
-            <app-card
-            [imageUrl]="'assets/python.png'"
-            [title]="'Python'"
-            [text]="'Python application designed for a gift wrapping service, featuring a quote generator, customizable designs, and receipt printing'"
-            [link]="'python'"
-            ></app-card>
-        </div>
-    </div>
+            </div>
+            <div class="container" style="width: 100%; text-align: center;">
+                <button class="button is-ghost">
+                    <a routerLink="projects">
+                        <span class="icon is-large"></span> 
+                        <i class="fa-solid fa-angle-down"></i>
+                        <span>More</span>
+                    </a>
+                </button>
+            </div>
     </section>
 
+
     <section class="section">
-        <div class="container">
-            <div class="columns is-vcentered">
+            <div class="columns is-centered">
                 <!--left column-->
                 <div class="column is-one-third">
                     <img src="/assets/pfp3.jpg" alt="bio image" class="image bio">
@@ -76,7 +72,6 @@
                     </p>
                 </div>
             </div>
-        </div>
     </section>
 
     <section class="section" id="contact">
